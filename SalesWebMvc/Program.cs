@@ -1,23 +1,35 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 using SalesWebMvc.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
+// Configuring the database connection
 string mySqlConnection = builder.Configuration.GetConnectionString("SalesWebMvcContext");
-
 builder.Services.AddDbContext<SalesWebMvcContext>(options =>
     options.UseMySql(mySqlConnection, ServerVersion.AutoDetect(mySqlConnection)));
 
-// Add services to the container.
+// Adding services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<SeedingService>(); // Registering SeedingService as a Scoped service
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
+// Configuring the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
+{
+    app.UseDeveloperExceptionPage();
+
+    // Get the SeedingService service and call the Seed method
+    using (var scope = app.Services.CreateScope())
+    {
+        var services = scope.ServiceProvider;
+        var seedingService = services.GetRequiredService<SeedingService>();
+        seedingService.Seed();
+    }
+}
+else
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 

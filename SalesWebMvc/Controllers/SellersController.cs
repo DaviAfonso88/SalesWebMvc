@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SalesWebMvc.Models;
+<<<<<<< HEAD
 using SalesWebMvc.Models.ViewModels;
+=======
+>>>>>>> b8207c59af711d1a87ea07c88b08cf678950afc7
 using SalesWebMvc.Services;
 
 namespace SalesWebMvc.Controllers
@@ -24,9 +27,13 @@ namespace SalesWebMvc.Controllers
 
         public IActionResult Create()
         {
+<<<<<<< HEAD
             var departments = _departmentService.FindAll();
             var viewModel = new SellerFormViewModel { Departments = departments };
             return View(viewModel);
+=======
+            return View();
+>>>>>>> b8207c59af711d1a87ea07c88b08cf678950afc7
         }
 
         [HttpPost]

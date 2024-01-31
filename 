@@ -1,0 +1,23 @@
+[33m952e460[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m Validation
+[33m594d85b[m App locale, number and date formatting
+[33m654a545[m Returning custom error page
+[33m6a18d07[m Update seller and custom service exception
+[33m9e5fd45[m Seller details and eager loading
+[33ma7d791a[m Delete seller
+[33mbcf565a[m Merge branch
+[33ma6c3390[m SellerFormViewModel and Department select component
+[33mfb0c73b[m Foreign key not null (referential integrity)
+[33m4091919[m Simple Create form
+[33mb8207c5[m SellerService and basic FindAll
+[33mcf67841[m SellerService and basic FindAll
+[33mab7806f[m SellersController
+[33mcdc2240[m Seeding Service
+[33m8b4c41a[m Other entities and second migration
+[33mdacc0ad[m Changing theme
+[33m5766991[m MySQL adaptation and first migration
+[33m815d384[m CRUD Scaffolding
+[33mf450e63[m Deleting Department view and controller
+[33m98ebb98[m First Model-Controller-View - Department
+[33mec3554b[m First controller and Razor pages tests
+[33mfc1b6b2[m Project created
+[33m6771619[m Initial commit

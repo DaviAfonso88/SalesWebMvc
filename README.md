@@ -17,6 +17,30 @@
 
 > Bem-vindo ao repositório do projeto SalesWebMvc! Este projeto é uma aplicação web desenvolvida utilizando o ASP.NET Core MVC e o Entity Framework. Aqui, você encontrará informações detalhadas sobre o projeto, seus fundamentos e instruções para começar a explorar e contribuir.
 
+<div>
+ <details>
+    <summary>Visão Geral Completa:</summary>
+
+> Esse projeto em ASP.NET Core MVC segue um padrão de rota "Controller / Ação / Id" e utiliza templates naturais, blocos C# em páginas Razor, dicionário ViewData e Tag Helpers. Ele emprega IActionResult, um tipo de construtor de método que inclui diferentes resultados, como ViewResult, PartialViewResult, ContentResult, RedirectResult, RedirectToRouteResult, JsonResult, FileResult, HttpNotFoundResult e EmptyResult.
+
+> O projeto começa com a criação de um modelo, controle e visualização para a entidade "Department", seguindo os passos de criação de pastas, classes e controllers. O scaffolding é utilizado para gerar operações CRUD básicas usando Entity Framework Core e MySQL, incluindo a adaptação do banco de dados com a criação de migrações.
+
+> A mudança de tema é realizada utilizando o Bootswatch para personalização do layout com diferentes estilos Bootstrap. Outras entidades são adicionadas ao modelo de domínio, e uma segunda migração é criada.
+
+> Um serviço de seeding é implementado para popular o banco de dados com dados iniciais. Em seguida, um controlador para a entidade "Seller" é criado, juntamente com a implementação de um serviço e uma view.
+
+> Formulários de criação e edição são desenvolvidos, incluindo a manipulação de chaves estrangeiras. Um ViewModel é introduzido para lidar com a seleção de departamentos.
+
+> A exclusão de vendedores, detalhes de vendedores e carregamento antecipado de dados são implementados. A atualização de vendedores e exceções personalizadas também são tratadas, incluindo uma página de erro personalizada.
+
+> A localização, formatação de números e datas, e validações são aplicadas no projeto. Operações assíncronas usando Tasks (async, await) são introduzidas, e o tratamento de exceções para exclusão com integridade referencial é implementado.
+
+> Por fim, são preparadas as visualizações de navegação para pesquisa de vendas, com implementações de pesquisa simples e agrupamento.
+
+> Este resumo abrange desde a criação inicial do projeto até a implementação de recursos avançados, seguindo boas práticas de desenvolvimento em ASP.NET Core MVC.
+
+</div>
+
 
 <br>
 

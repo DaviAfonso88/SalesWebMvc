@@ -4,47 +4,50 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>@ViewData["Title"]</h1>
+<div class="container mt-5">
+    <h1 class="text-primary">@ViewData["Title"]</h1>
 
-<div>
-    <h4>Seller</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.BirthDate)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.BirthDate)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.BaseSalary)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.BaseSalary)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Department)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Department.Name)
-        </dd>
-    </dl>
+    <div class="card mt-4">
+        <div class="card-body">
+            <h4 class="card-title">Seller Information</h4>
+            <hr />
+            <dl class="row">
+                <dt class="col-sm-3 text-muted">
+                    @Html.DisplayNameFor(model => model.Name)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
+                <dt class="col-sm-3 text-muted">
+                    @Html.DisplayNameFor(model => model.Email)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Email)
+                </dd>
+                <dt class="col-sm-3 text-muted">
+                    @Html.DisplayNameFor(model => model.BirthDate)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.BirthDate)
+                </dd>
+                <dt class="col-sm-3 text-muted">
+                    @Html.DisplayNameFor(model => model.BaseSalary)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.BaseSalary)
+                </dd>
+                <dt class="col-sm-3 text-muted">
+                    @Html.DisplayNameFor(model => model.Department)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Department.Name)
+                </dd>
+            </dl>
+        </div>
+    </div>
+
+    <div class="mt-4">
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Edit</a>
+        <a asp-action="Index" class="btn btn-secondary ml-2">Back to list</a>
+    </div>
 </div>
-
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-outline-warning">Edit</a>
-    <a asp-action="Index">Back to list</a>
-</div>
-

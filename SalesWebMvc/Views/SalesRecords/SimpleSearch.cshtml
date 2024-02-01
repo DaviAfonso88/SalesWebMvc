@@ -1,7 +1,63 @@
-﻿
+﻿@model IEnumerable<SalesWebMvc.Models.SalesRecord>
+
 @{
     ViewData["Title"] = "Simple Search";
 }
 
-<h1>@ViewData["Title"]</h1>
+<div class="container mt-5">
+    <h1 class="text-center display-4">@ViewData["Title"]</h1>
 
+    <nav class="navbar navbar-dark bg-success mt-4 rounded">
+        <div class="container">
+            <form class="row align-items-center">
+                <div class="col-md-5 form-group">
+                    <label for="minDate" class="text-light mr-2">Min Date</label>
+                    <input type="date" class="form-control rounded" name="minDate" value=@ViewData["minDate"] />
+                </div>
+                <div class="col-md-5 form-group">
+                    <label for="maxDate" class="text-light mr-2">Max Date</label>
+                    <input type="date" class="form-control rounded" name="maxDate" value=@ViewData["maxDate"] />
+                </div>
+                <div class="col-md-2">
+                    <button type="submit" class="btn btn-light mt-4 rounded">Filter</button>
+                </div>
+            </form>
+        </div>
+    </nav>
+
+
+    <div class="card mt-4">
+        <div class="card-header bg-primary text-white">
+            <h3 class="card-title text-center">Total Sales: @Model.Sum(obj => obj.Amount).ToString("F2")</h3>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped table-hover">
+                    <thead class="thead-dark">
+                        <tr class="table-success">
+                            <th class="text-center">ID</th>
+                            <th class="text-center">Date</th>
+                            <th class="text-center">Seller</th>
+                            <th class="text-center">Department</th>
+                            <th class="text-center">Amount</th>
+                            <th class="text-center">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td class="text-center">@Html.DisplayFor(modelItem => item.Id)</td>
+                                <td>@Html.DisplayFor(modelItem => item.Date)</td>
+                                <td>@Html.DisplayFor(modelItem => item.Seller.Name)</td>
+                                <td>@Html.DisplayFor(modelItem => item.Seller.Department.Name)</td>
+                                <td class="text-center">@Html.DisplayFor(modelItem => item.Amount)</td>
+                                <td>@Html.DisplayFor(modelItem => item.Status)</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

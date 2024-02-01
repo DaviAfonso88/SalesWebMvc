@@ -16,6 +16,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<SeedingService>(); // Registering SeedingService as a Scoped service
 builder.Services.AddScoped<SellerService>();
 builder.Services.AddScoped<DepartmentService>();
+builder.Services.AddScoped<SalesRecordService>();
 
 
 var app = builder.Build();

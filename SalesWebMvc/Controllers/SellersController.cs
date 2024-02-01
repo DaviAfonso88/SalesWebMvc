@@ -36,6 +36,7 @@ namespace SalesWebMvc.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Seller seller)
         {
+
             await _sellerService.InsertAsync(seller);
             return RedirectToAction(nameof(Index));
         }
